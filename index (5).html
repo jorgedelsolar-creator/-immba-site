@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="color-scheme" content="light">
+<title>Fu Jen Catholic University International MBA (imMBA)</title>
+<style>
+:root{box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px);color-scheme:light;
+--g:#1f4d3a;--g2:#2d6a50;--tx:#1b2a33;--mut:#5b6c78;--w:#fff;--b:#f1f7fc;--b2:#dcebf7;--bd:#d3e1ec}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:200px}
+body{margin:0;background:var(--w);color:var(--tx);font:16px/1.65 system-ui,-apple-system,"Segoe UI","Noto Sans TC",sans-serif}
+a{color:var(--g);text-underline-offset:3px}
+header{position:sticky;top:env(safe-area-inset-top,0px);z-index:30;background:var(--w);box-shadow:0 1px 0 var(--bd)}
+/* 1 Top notice bar */
+.notice{background:var(--b2);font-size:13px;padding:7px 20px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap;text-align:center}
+.who{font-weight:700;color:var(--g)}
+.notice a{font-weight:700}
+.sep{opacity:.35}
+.cm{border:1px solid #9fbfd8;background:var(--w);color:var(--tx);border-radius:999px;font-size:12px;padding:3px 12px;cursor:pointer;font-family:inherit}
+.cm:hover{background:var(--b)}
+/* 2 Branding */
+.brand{max-width:1200px;margin:auto;padding:10px 20px;display:flex;align-items:center;gap:14px}
+.brand svg{width:58px;height:58px;flex:none}
+.brand h1{font-size:clamp(1rem,2.4vw,1.35rem);margin:0;color:var(--g);font-weight:650}
+/* 3 Navigation + 4 Action */
+.navrow{max-width:1200px;margin:auto;padding:2px 20px 10px;display:flex;align-items:flex-start;gap:14px}
+.navrow[hidden]{display:none}
+nav{flex:1}
+nav ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:2px 4px}
+nav a{display:block;padding:5px 9px;font-size:13.5px;color:var(--tx);text-decoration:none;border-radius:6px}
+nav a:hover,nav a.on{background:var(--b2);color:var(--g)}
+nav li{position:relative}
+nav li.has>a::after{content:" ▾";font-size:10px;opacity:.7}
+.dd{display:none;position:absolute;top:100%;left:0;min-width:240px;background:var(--w);border:1px solid var(--bd);border-radius:10px;padding:6px;box-shadow:0 12px 28px #1b2a3322;z-index:40}
+nav li:hover>.dd,nav li:focus-within>.dd,nav li.open>.dd{display:block}
+.dd a{padding:9px 12px;font-size:14px;white-space:nowrap}
+.subs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:14px;margin-top:18px}
+.sub{background:var(--w);border:1px solid var(--bd);border-radius:14px;padding:18px}
+.sub h4{margin:0 0 4px;color:var(--g)}
+.sub p{margin:0 0 8px;color:var(--mut);font-size:.95rem}
+.act{display:flex;gap:8px;align-items:center}
+.lang{border:1px solid var(--bd);background:var(--w);color:var(--mut);border-radius:8px;padding:8px 14px;font-size:13px;cursor:pointer;font-family:inherit}
+.lang:hover{background:var(--b)}
+.btn{display:inline-block;background:var(--g);color:#fff;padding:9px 22px;border-radius:999px;font-weight:600;font-size:14px;text-decoration:none;border:1.5px solid var(--g);white-space:nowrap}
+.btn:hover{background:var(--g2);border-color:var(--g2)}
+.btn.o{background:var(--w);color:var(--g)}
+.btn.o:hover{background:var(--b2)}
+/* 5 Hero */
+.hero{position:relative;overflow:hidden;background:linear-gradient(160deg,var(--b) 0%,var(--b2) 100%);text-align:center;padding:96px 20px 84px}
+.hero svg.bg{position:absolute;right:-90px;top:-70px;width:520px;opacity:.5;pointer-events:none}
+.hero>*{position:relative}
+.pill{display:inline-block;background:var(--w);color:var(--g);border:1px solid var(--bd);border-radius:999px;font-size:13px;font-weight:600;padding:4px 16px;margin-bottom:22px}
+.hero h2{font-size:clamp(2.4rem,7vw,4.4rem);line-height:1.05;margin:0 0 18px;color:var(--g);letter-spacing:-1.5px}
+.hero h2 em{font-style:normal;background:linear-gradient(transparent 68%,#a8cce6 68%)}
+.hero p{max-width:600px;margin:0 auto 32px;color:var(--mut);font-size:1.1rem}
+.hero .btn{padding:14px 32px;font-size:15px}
+.facts{display:flex;justify-content:center;gap:10px 28px;flex-wrap:wrap;margin-top:40px;color:var(--mut);font-size:14px}
+.facts span::before{content:"✓ ";color:var(--g);font-weight:700}
+/* sections */
+.wrap{max-width:1000px;margin:auto;padding:0 20px}
+section{padding:56px 0}
+section:nth-of-type(even){background:var(--b)}
+h3{font-size:clamp(1.5rem,4vw,2rem);margin:0 0 10px;color:var(--g)}
+.d{color:var(--mut);max-width:680px;margin:0 0 14px}
+.list{list-style:none;padding:0;margin:0;max-width:760px}
+.list li{background:var(--w);border:1px solid var(--bd);border-radius:12px;margin-bottom:8px}
+.list a{display:flex;justify-content:space-between;gap:12px;padding:12px 16px;color:var(--tx);text-decoration:none}
+.list a:hover{color:var(--g)}
+.list time{color:var(--mut);font-size:13px;white-space:nowrap}
+.fcard{background:var(--w);border:1px solid var(--bd);border-radius:14px;padding:18px;display:flex;gap:14px}
+.fcard img{width:84px;height:84px;border-radius:12px;object-fit:cover;flex:none}
+.fcard h4{margin:0 0 2px;color:var(--g)}.fcard p{margin:0 0 4px;color:var(--mut);font-size:.9rem}
+.fcard .ph{width:84px;height:84px;border-radius:12px;background:var(--b2);color:var(--g);display:grid;place-items:center;font-weight:700;flex:none}
+.fh{grid-column:1/-1;margin:16px 0 0;font-size:1.2rem}
+.ngrid{display:grid;gap:12px;max-width:900px;margin-top:14px}
+.ncard{display:flex;justify-content:space-between;align-items:center;gap:16px;background:#fff;border:1px solid var(--bd);border-radius:14px;padding:14px 18px;text-decoration:none;color:var(--tx);cursor:pointer;transition:transform .2s,box-shadow .2s,border-color .2s}
+button.ncard{font:inherit;text-align:left;width:100%}
+.ncard:hover,.ncard:focus-visible{transform:translateY(-3px);box-shadow:0 10px 24px #1b2a3322;border-color:var(--g)}
+.ncard time{display:block;font-size:12px;color:var(--mut)}.ncard b{font-weight:600}
+.ncard .go{color:var(--g);font-size:13px;font-weight:600;white-space:nowrap}
+.ptag{background:var(--g);color:#fff;font-size:11px;font-weight:700;padding:1px 8px;border-radius:999px;margin-right:8px}
+.src{font-size:13px;color:var(--mut);margin-top:14px}
+.rich .sub{margin-top:16px}.rich p{color:var(--mut)}.rich h5{margin:16px 0 4px;color:var(--g);font-size:1rem}
+.rl2{margin:8px 0;padding-left:20px;color:var(--mut)}
+.rl{list-style:none;padding:0;margin:0 0 14px}.rl li{display:flex;justify-content:space-between;gap:10px;background:#fff;border:1px solid var(--bd);border-radius:10px;padding:9px 14px;margin-bottom:6px}
+.imgs{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:12px}.imgs img{width:100%;border-radius:12px;aspect-ratio:4/3;object-fit:cover}
+.fac{display:grid;grid-template-columns:1fr;gap:18px;margin-top:18px}
+.fac .fcard{padding:26px;gap:28px;align-items:center}
+.fac .fcard img,.fac .fcard .ph{width:170px;height:170px;border-radius:16px;font-size:2.4rem}
+.fac .fcard h4{font-size:1.5rem}.fac .fcard p{font-size:1rem}
+@media(max-width:640px){.fac .fcard{flex-direction:column;align-items:flex-start}}
+dialog#nd{border:1px solid var(--bd);border-radius:14px;max-width:600px;width:92%;padding:22px}dialog#nd::backdrop{background:#0006}
+footer{background:var(--g);color:#cfe3d8;text-align:center;padding:26px 20px;font-size:14px}
+footer a{color:#fff}
+@media(max-width:700px){.navrow{flex-direction:column}.act{width:100%}.hero svg.bg{width:340px}}
+</style>
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+<symbol id="logo" viewBox="0 0 64 64">
+  <path d="M32 2 58 11v20c0 16-11 26-26 31C17 57 6 47 6 31V11z" fill="var(--g)"/>
+  <path d="M32 6 54 13.500V31c0 13.500-9.500 22.500-22 27C19.500 53.500 10 44.500 10 31V13.500z" fill="none" stroke="#c9a96a" stroke-width="1"/>
+  <path d="M32 9v9M28.500 12.500h7" stroke="#fff" stroke-width="2" stroke-linecap="round"/>
+  <g fill="none" stroke="#fff" stroke-width="1.300" stroke-linecap="round">
+    <circle cx="32" cy="32" r="12.500"/><ellipse cx="32" cy="32" rx="5.500" ry="12.500"/>
+    <path d="M32 19.500v25M19.500 32h25M22 25.500h20M22 38.500h20"/>
+  </g>
+  <path d="M15 47c5-3 11-3 17 1 6-4 12-4 17-1v6c-5-3-11-3-17 1-6-4-12-4-17-1z" fill="#c9a96a"/>
+  <path d="M32 48v6" stroke="var(--g)" stroke-width="1"/>
+</symbol>
+</svg>
+
+<header>
+  <!-- 1. Top notice bar -->
+  <div class="notice">
+    <span class="who">Jorge Del Solar · F15382021</span><span class="sep">|</span>
+    <span data-zh="課堂作業 · 非官方網站">Class assignment · This is not the official website</span><span class="sep">|</span>
+    <a href="https://www.management.fju.edu.tw/esubweb/immbaengindex/" target="_blank" rel="noopener" data-zh="imMBA 官方網站 ↗">Official imMBA website ↗</a>
+    <button class="cm" id="cm" aria-expanded="true">Collapse main menu</button>
+  </div>
+  <!-- 2. Branding header -->
+  <div class="brand"><a href="admin.html" title="Back office" aria-label="Open back office"><svg role="img" aria-label="imMBA logo"><use href="#logo"/></svg></a>
+    <h1 data-zh="輔仁大學國際經營管理碩士班（imMBA）">Fu Jen Catholic University International MBA (imMBA)</h1></div>
+  <!-- 3. Navigation bar + 4. Action area -->
+  <div class="navrow" id="navrow">
+    <nav><ul id="menu"></ul></nav>
+    <div class="act">
+      <button class="lang" id="lang" title="Switch language">中文</button>
+      <a class="btn" href="https://www.management.fju.edu.tw/esubweb/immbaengindex/enroll.php?IID=3" target="_blank" rel="noopener" data-zh="立即報名">Apply Now</a>
+    </div>
+  </div>
+</header>
+
+<!-- 5. Hero section -->
+<div class="hero" id="top">
+  <svg class="bg" viewBox="0 0 200 200" fill="none" stroke="#9fc3dd" stroke-width="1" aria-hidden="true"><circle cx="100" cy="100" r="90"/><ellipse cx="100" cy="100" rx="40" ry="90"/><ellipse cx="100" cy="100" rx="75" ry="90"/><path d="M100 10v180M10 100h180M22 60h156M22 140h156"/></svg>
+  <span class="pill" data-zh="輔仁大學 · AACSB 認證">Fu Jen Catholic University · AACSB-accredited</span>
+  <h2 data-zh="打造你的<em>國際未來</em><br>從 imMBA 開始">Shape Your <em>Global Future</em><br>with imMBA</h2>
+  <p data-zh="輔仁大學國際經營管理碩士班，以 AACSB 認證的卓越品質，培育全球管理人才。">Fu Jen Catholic University International MBA — cultivating global managers with AACSB-accredited excellence.</p>
+  <a class="btn" href="https://www.management.fju.edu.tw/esubweb/immbaengindex/enroll.php?IID=3" target="_blank" rel="noopener" data-zh="立即報名">Apply Now</a>
+  <a class="btn o" href="#marketplace" data-zh="書籍教材市集">Books &amp; materials marketplace</a>
+  <div class="facts"><span data-zh="英語授課">Taught in English</span><span data-zh="雙聯學位與海外交換">Dual degree &amp; exchange</span><span data-zh="國際化學習社群">International community</span></div>
+</div>
+
+<div id="secs"></div>
+<dialog id="nd"></dialog>
+<footer>© College of Management, Fu Jen Catholic University · <a href="admin.html">Admin</a> · <a href="#top">↑</a></footer>
+
+<script>
+var O="https://www.management.fju.edu.tw/esubweb/immbaengindex/";
+var S=[
+["about","About","關於","An English-taught international MBA that blends a global outlook with practical learning, preparing managers who thrive across cultures.","以英語授課的國際 MBA，結合國際視野與實務學習，培養能跨文化發揮的管理人才。",O+"profile.php?IID=2"],
+["admissions","Admissions","招生資訊","Check eligibility, prepare your documents and apply online.","了解申請資格、準備文件並線上報名。",O+"enroll.php?IID=3"],
+["curriculum","Curriculum","課程資訊","Core management courses, electives and graduation requirements.","管理核心課程、選修課與畢業要求。",O+"class.php?CID=1"],
+["faculty","Faculty","師資介紹","Meet the teaching team behind the program.","認識本班的教師團隊。",O+"teacher.php"],
+["guide","imMBA Guide","imMBA 全攻略","A practical guide for new and current students.","給新生與在學生的實用指南。",O+"subedit.php?EID=35"],
+["graduation","Graduation","畢業與離校","Graduation requirements and procedures.","畢業要求與離校流程。",O+"subedit.php?EID=16"],
+["dual","Dual Degree","雙聯學位","Earn degrees from partner universities.","與合作大學取得雙學位。",O+"subedit.php?EID=24"],
+["exchange","Overseas Exchange","海外交換","Study abroad at international partner schools.","前往國際合作學校交換學習。",O+"subedit.php?EID=25"],
+["marketplace","Marketplace","書籍教材市集","A place for students to exchange books and course materials.","學生交流書籍與教材的平台。",""],
+["events","Events","活動集錦","Info sessions and program activities.","說明會與各項活動。",""],
+["announcements","Announcements","公告","Latest notices for applicants and students.","給申請者與學生的最新公告。",""],
+["downloads","Downloads","表格下載","Forms and program documents.","表格與課程文件。",O+"download.php"],
+["college","College of Management","輔大管理學院","The college that hosts the imMBA.","imMBA 所屬的管理學院。","https://www.management.fju.edu.tw/index_en.php"]];
+var N=[["Spring 2027, apply NOW!! (Sep 14 - Oct 14) - This track is open to international students only","2026/08/19",187],
+["College of Management Career Platform – Job Openings","2025/01/30",398],
+["【9/29 Admissions Info Session Recap｜Local Student Applications Open Tomorrow!】","2026/09/29",424],
+["【Two Years, More Than One Master's Degree.】","2026/09/22",423],
+["【International Students: Get to Know Fu Jen imMBA at Our Info Session!】","2026/09/15",422]];
+var SUB={
+about:[["overview","Overview and Ranking","概況與排名","Program overview, accreditation and rankings.","課程概況、認證與排名。",O+"profile.php?IID=2"],
+["environment","Our Learning Environment","學習環境","Campus, classrooms and student life.","校園、教室與學生生活。",O+"profile.php?IID=36"]],
+admissions:[["apply","Apply for Fu Jen imMBA","申請輔仁 imMBA","Requirements, documents and how to apply.","申請資格、文件與報名方式。",O+"enroll.php?IID=3"]],
+curriculum:[["requirements","Curriculum and Requirements","課程與修業規定","Courses, electives and program requirements.","課程、選修與修業規定。",O+"class.php?CID=1"]]};
+var m="",s="";
+S.forEach(function(x){
+ var sb=SUB[x[0]];
+ m+='<li'+(sb?' class="has"':'')+'><a href="#'+x[0]+'" data-zh="'+x[2]+'">'+x[1]+'</a>'+(sb?'<div class="dd">'+sb.map(function(y){return '<a href="#'+y[0]+'" data-zh="'+y[2]+'">'+y[1]+'</a>'}).join("")+'</div>':'')+'</li>';
+ s+='<section id="'+x[0]+'"><div class="wrap"><h3 data-zh="'+x[2]+'">'+x[1]+'</h3><p class="d" data-zh="'+x[4]+'">'+x[3]+'</p>';
+ if(sb){s+='<div class="subs">'+sb.map(function(y){return '<div class="sub" id="'+y[0]+'"><h4 data-zh="'+y[2]+'">'+y[1]+'</h4><p data-zh="'+y[4]+'">'+y[3]+'</p><a href="'+y[5]+'" target="_blank" rel="noopener" data-zh="前往官方頁面 ↗">View on official site ↗</a></div>'}).join("")+'</div>'}
+ if(x[6]){s+='<ul class="list">'+x[6].map(function(i){var n=N[i];return '<li><a href="'+O+'news-detail.php?NID='+n[2]+'" target="_blank" rel="noopener"><span>'+n[0]+'</span><time>'+n[1]+'</time></a></li>'}).join("")+'</ul>'}
+ if(x[5]&&!sb){s+='<a href="'+x[5]+'" target="_blank" rel="noopener" data-zh="前往官方頁面 ↗">View on official site ↗</a>'}
+ s+='</div></section>'});
+document.getElementById("menu").innerHTML=m;document.getElementById("secs").innerHTML=s;
+/* ---- Complete pages (content paraphrased from the official site) ---- */
+function E(u,t){return '<a href="'+u+'" target="_blank" rel="noopener">'+t+' ↗</a>'}
+function R(u,t,ty){return '<li><a href="'+u.replace(/ /g,"%20")+'" target="_blank" rel="noopener">'+t+'</a><span class="tag">'+ty+'</span></li>'}
+var F="https://www.management.fju.edu.tw/smarteditupfiles/immbaengindex/";
+var RICH={
+about:'<div id="overview" class="sub"><h4 data-zh="概況與排名">Overview and Ranking</h4><p>The Fu Jen imMBA is '+E("https://www.aacsb.edu/educators/accreditation","AACSB-accredited")+', a distinction held by only about 5% of business schools worldwide. The curriculum shows how marketing, operations, finance, human resources, technology and strategy connect in the global economy.</p><ul class="rl2"><li><b>Top 3 in Taiwan and top 20 in Far East Asia</b> in International Management (Eduniversal 2025).</li><li><b>International classroom:</b> students from more than 30 countries, with a local to international ratio that can reach 1:1.</li><li><b>Dual master&rsquo;s degrees</b> with UM-Flint (USA), KEDGE (France) and IQS (Spain).</li><li><b>Tuition-free exchange</b> with partner schools worldwide.</li></ul></div><div id="environment" class="sub"><h4 data-zh="學習環境">Our Learning Environment</h4><div class="imgs">'+["MD 1F(5).jpg","1.jpg","2.jpg"].map(function(f){return '<img src="'+(F+f).replace(/ /g,"%20")+'" alt="imMBA learning environment" loading="lazy" referrerpolicy="no-referrer">'}).join("")+'</div></div>',
+admissions:'<div id="apply" class="sub"><h4 data-zh="申請輔仁 imMBA">Apply for Fu Jen imMBA</h4><p>All courses are taught in English. Two paths are available: the two-year imMBA, or a <b>dual master&rsquo;s</b> (year one at imMBA, year two at a partner school abroad, subject to the partner&rsquo;s admission).</p><h5>Intakes</h5><p>Spring applications run roughly mid-September to mid-October. Fall has two rounds: about mid-October to early December, and early March to mid-May. This track is for international students only; local students should use the '+E("https://www.management.fju.edu.tw/subweb/immba/enroll.php?IID=26","Chinese admissions page")+'.</p><h5>Fall 2027: open now</h5><ul class="rl2"><li>Round 1: Oct 15, 2026, 13:00 to Dec 4, 2026, 23:59 (Taiwan time)</li><li>Round 2: Mar 1, 2027, 13:00 to May 15, 2027, 23:59 (Taiwan time)</li></ul><h5>Required documents</h5><ul class="rl2"><li>Autobiography and study plan (English)</li><li>English proficiency certificate (TOEFL, IELTS or TOEIC; CEFR B2 preferred)</li><li>Two recommendation letters, plus any other supporting material</li></ul><h5>Tuition and scholarships</h5><p>The international-student rate is NT$123,000 per semester. Holders of the MOE Taiwan, MOFA Taiwan or FJCU new-international-student scholarships pay the local rate of NT$68,660 per semester. The FJCU President&rsquo;s Scholarship (English-speaking countries or CEFR B2 or above) lowers it to NT$82,400 for up to four semesters, with no separate application. Only one scholarship can be held.</p><p><a class="btn" href="http://idsasys.oie.fju.edu.tw/" target="_blank" rel="noopener">Apply online ↗</a> <ul class="rl" style="margin-top:14px">'+R(F+"FJCU_116-1Admission.pdf","Admission Brochure, Fall 2027","PDF")+'</ul></p></div>',
+curriculum:'<div id="requirements" class="sub"><h4 data-zh="課程與修業規定">Curriculum and Requirements</h4><h5>Course waivers</h5><p>Postgraduate waiver requests must be made before enrolling, once only, and are approved by the imMBA chair. Economics, Business Management, Statistics and Accounting are prerequisites: students from non-business majors must show a transcript for one of them, or pass one at FJCU in their first semester (these credits do not count toward graduation).</p><h5>Thesis</h5><p>The office publishes the advisor list each semester (late March and early October). Enroll in THESIS before add/drop in the semester you may defend.</p><h5>Curriculum documents</h5><ul class="rl">'+R(F+"0907.pdf","Fall 2026 and Spring 2027 curriculum","PDF")+R(F+"imMBA_course introduction 2026 05 22.pdf","Course catalog and objectives","PDF")+R(F+"Curriculum structure-115.xls","Course structure for graduation, cohort 115","XLS")+R(F+"Curriculum structure-114(2).xls","Course structure for graduation, cohort 114","XLS")+'</ul><h5>Graduation requirements</h5><ul class="rl">'+R(F+"GR-ENG-Fall 2025 (v2026 05 18).pdf","Students enrolled from fall 2025","PDF")+R(F+"GR-ENG-Fall%202024%20(v2024%200516).pdf","Students enrolled from fall 2024","PDF")+R(F+"GR-ENG-Fall%202023%20(v20221124).pdf","Students enrolled from fall 2023","PDF")+'</ul></div>',
+dual:'<ul class="rl2"><li>University of Michigan-Flint (USA)</li><li>KEDGE Business School (France)</li><li>IQS School of Management (Spain)</li></ul><p>Complete both programs&rsquo; requirements to earn two master&rsquo;s degrees in two years. Tuition depends on each partner agreement. '+E("https://www.management.fju.edu.tw/esubweb/immbaengindex/subedit.php?EID=24","Official Dual Degree page")+'</p>',
+exchange:'<p>imMBA students who do not join a dual-degree program can join the tuition-free exchange with partner schools worldwide. '+E("http://isc.oie.fju.edu.tw/generalServices.jsp?labelID=39","Fu Jen International Student Center")+'</p>',
+downloads:'<ul class="rl">'+R(F+"FJCU_116-1Admission.pdf","Admission Brochure, Fall 2027","PDF")+R(F+"0907.pdf","Fall 2026 and Spring 2027 curriculum","PDF")+R(F+"imMBA_course introduction 2026 05 22.pdf","Course catalog and objectives","PDF")+R(F+"Curriculum structure-115.xls","Course structure for graduation, cohort 115","XLS")+R(F+"GR-ENG-Fall 2025 (v2026 05 18).pdf","Graduation requirements, fall 2025 cohort","PDF")+'</ul>'};
+Object.keys(RICH).forEach(function(k){var w=document.querySelector("#"+k+" .wrap");if(!w)return;w.querySelectorAll(".subs,a[target],.list").forEach(function(e){e.remove()});w.insertAdjacentHTML("beforeend",'<div class="rich">'+RICH[k]+'</div>')});
+var an=document.getElementById("announcements");if(an)document.getElementById("secs").prepend(an);
+
+/* Supabase: faculty from cloud database (publishable key is safe for the front-end) */
+var SB_URL="https://yklyadjtwiupaolsfxpo.supabase.co",SB_KEY="sb_publishable_2gZwb6alKHN9LaL2QZkBBQ_-dLmmam0";
+(function(){var w=document.querySelector("#faculty .wrap");if(!w)return;
+ var box=document.createElement("div");box.className="fac";box.textContent="Loading faculty…";w.appendChild(box);
+ function el(t,c,x){var e=document.createElement(t);if(c)e.className=c;if(x)e.textContent=x;return e}
+ fetch(SB_URL+"/rest/v1/faculty?select=*&order=sort_order.asc",{headers:{apikey:SB_KEY}})
+ .then(function(r){if(!r.ok)throw r.status;return r.json()})
+ .then(function(rows){box.textContent="";if(!rows.length){box.textContent="No faculty records yet.";return}
+  var last="";rows.forEach(function(f){var g=f.category==="Full-time"?"Full-Time Faculty":(f.category==="Adjunct"?"Part-Time Faculty":"Visiting Faculty");if(g!==last){box.appendChild(el("h3","fh",g));last=g}var c=el("div","fcard"),i;
+   if(f.image_url){i=el("img");i.referrerPolicy="no-referrer";i.loading="lazy";i.src=f.image_url;i.alt=f.name}else i=el("div","ph",f.name.charAt(0));
+   var d=el("div");d.appendChild(el("h4","",f.name));
+   [f.title,f.education&&"Education: "+f.education,f.research_fields&&"Research: "+f.research_fields,f.phone&&"Tel: "+f.phone].forEach(function(t){if(t)d.appendChild(el("p","",t))});
+   if(f.email){var p=el("p"),a=el("a","",f.email);a.href="mailto:"+f.email;p.appendChild(a);d.appendChild(p)}
+   if(f.website){var p2=el("p"),a2=el("a","","Website ↗");a2.href=f.website;a2.target="_blank";a2.rel="noopener";p2.appendChild(a2);d.appendChild(p2)}
+   c.appendChild(i);c.appendChild(d);box.appendChild(c)})})
+ .catch(function(){box.textContent="Faculty data could not be loaded."})})();
+/* ---- Announcements & Events from Supabase (bilingual) ---- */
+var NW=[];
+function renderNews(){["announcement","event"].forEach(function(cat){var id=cat==="event"?"events":"announcements",w=document.querySelector("#"+id+" .wrap");if(!w)return;
+ var g=w.querySelector(".ngrid");if(!g){g=document.createElement("div");g.className="ngrid";w.querySelector(".d").after(g);if(cat==="announcement"){var p=document.createElement("p");p.className="src";p.innerHTML='Source: <a href="https://www.management.fju.edu.tw/esubweb/immbaengindex/news.php" target="_blank" rel="noopener">MBA Program in International Management (imMBA) news ↗</a>';g.after(p)}}
+ g.textContent="";var items=NW.filter(function(n){return n.category===cat});
+ if(!items.length){g.textContent=zh?"目前沒有資料。":"Nothing to show yet.";return}
+ items.forEach(function(n,i){var t=(zh?n.title_zh:n.title_en)||n.title_en||n.title_zh||"",a=document.createElement(n.link_url?"a":"button"),L=n.link_url?(zh?"查看詳細內容 ↗":"View Details ↗"):(zh?"查看詳細內容 →":"View Details →");
+  a.className="ncard";if(n.link_url){a.href=n.link_url;a.target="_blank";a.rel="noopener"}else{a.type="button";a.onclick=function(){openNews(n)}}
+  var l=document.createElement("span"),d=document.createElement("time"),b=document.createElement("b"),r=document.createElement("span");
+  d.textContent=n.news_date.replace(/-/g,"/");if(n.is_top){var tg=document.createElement("span");tg.className="ptag";tg.textContent="TOP";b.appendChild(tg)}b.appendChild(document.createTextNode(t));
+  l.appendChild(d);l.appendChild(b);r.className="go";r.textContent=L;if(n.image_url){var im=document.createElement("img");im.src=n.image_url;im.alt="";im.loading="lazy";im.style.cssText="width:84px;height:60px;object-fit:cover;border-radius:8px;flex:none";a.appendChild(im)}l.style.flex="1";a.appendChild(l);a.appendChild(r);g.appendChild(a)})})}
+function openNews(n){var d=document.getElementById("nd");d.textContent="";var h=document.createElement("h3"),t=document.createElement("p"),c=document.createElement("p"),x=document.createElement("button");
+ h.textContent=(zh?n.title_zh:n.title_en)||n.title_en||n.title_zh;t.textContent=n.news_date.replace(/-/g,"/");c.style.whiteSpace="pre-wrap";c.textContent=(zh?n.content_zh:n.content_en)||n.content_en||n.content_zh||"";
+ x.className="btn";x.textContent=zh?"關閉":"Close";x.onclick=function(){d.close()};var im=null;if(n.image_url){im=document.createElement("img");im.src=n.image_url;im.alt="";im.style.cssText="width:100%;border-radius:12px;margin-bottom:12px"}[h,t,im,c,x].forEach(function(e){if(e)d.appendChild(e)});d.showModal()}
+fetch(SB_URL+"/rest/v1/news?select=*&status=eq.published&order=sort_order.asc",{headers:{apikey:SB_KEY}}).then(function(r){if(!r.ok)throw r.status;return r.json()}).then(function(r){NW=r;renderNews()}).catch(function(){NW=[];renderNews()});
+var zh=false,els=[].slice.call(document.querySelectorAll("[data-zh]"));
+els.forEach(function(e){e._en=e.innerHTML});
+var lang=document.getElementById("lang"),cm=document.getElementById("cm"),row=document.getElementById("navrow");
+function setCm(){var o=!row.hidden;cm.setAttribute("aria-expanded",o);cm.textContent=zh?(o?"收合主選單":"展開主選單"):(o?"Collapse main menu":"Expand main menu")}
+lang.onclick=function(){zh=!zh;els.forEach(function(e){e.innerHTML=zh?e.getAttribute("data-zh"):e._en});
+renderNews();document.documentElement.lang=zh?"zh-Hant":"en";lang.textContent=zh?"EN":"中文";setCm()};
+cm.onclick=function(){row.hidden=!row.hidden;setCm()};setCm();
+document.querySelectorAll("#menu li.has>a").forEach(function(a){a.addEventListener("click",function(e){
+ if(!matchMedia("(hover:none)").matches)return;var li=a.parentNode,o=li.classList.contains("open");
+ document.querySelectorAll("#menu li.open").forEach(function(x){x.classList.remove("open")});
+ if(!o){e.preventDefault();li.classList.add("open")}})});
+document.addEventListener("click",function(e){if(!e.target.closest("#menu"))document.querySelectorAll("#menu li.open").forEach(function(x){x.classList.remove("open")})});
+var links=[].slice.call(document.querySelectorAll("#menu>li>a"));
+window.addEventListener("scroll",function(){var y=window.scrollY+220,c=null;
+links.forEach(function(a){var e=document.querySelector(a.getAttribute("href"));if(e&&e.offsetTop<=y)c=a});
+links.forEach(function(a){a.classList.toggle("on",a===c)})});
+</script>
+</body>
+</html>
