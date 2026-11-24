@@ -127,7 +127,6 @@ function thumb(p){return h("div",{class:"mk-th"},p.image_url?h("img",{src:p.imag
 function stock(a){return a<=0?h("span",{class:"mk-chip mut"},"Sold out"):a<=2?h("span",{class:"mk-chip warn"},"Low stock: only "+a+" left"):h("span",{class:"mk-chip ok"},"In stock: "+a+" available")}
 function inCart(id){var c=S.cart.filter(function(x){return x.id===id})[0];return c?c.qty:0}
 function addToCart(p,qty){if(!S.user){authDlg("in","Sign in to add items to your cart.");return}
- if(p.seller_id===S.user.id){say("You cannot buy your own product.",true);return}
  qty=Math.max(1,parseInt(qty,10)||1);var room=avail(p)-inCart(p.id);if(room<=0){say("You already have all available units in your cart.",true);return}
  if(qty>room){qty=room}
  var c=S.cart.filter(function(x){return x.id===p.id})[0];if(c){c.qty+=qty}else S.cart.push({id:p.id,name:p.name,price:Number(p.price),seller_id:p.seller_id,seller_name:p.seller_name,image_url:p.image_url,qty:qty});
@@ -196,9 +195,9 @@ async function vMember(){if(!S.user)return prompt("Sign in to open your member c
  if(st==="approved")box=h("div",{class:"mk-note"},"You are an approved seller. Switch to Seller mode to list products.");
  else if(st==="pending")box=h("div",{class:"mk-note"},"Your seller application is waiting for platform admin approval.");
  else box=h("div",null,st==="rejected"?h("p",{class:"mk-err"},"Your last application was not approved. You can update your details and apply again."):null,
-  h("p",{class:"mk-sub"},"Buyers can browse and order right away. To sell, apply to become a seller: a platform admin reviews it."),
+  h("p",{class:"mk-sub"},"Buyers can browse and order right away. To sell, add your payment / contact instructions above and activate seller access. Seller access is granted right away; platform admins can review every seller."),
   h("button",{class:"mk-btn",onclick:async function(){var s=await sb.rpc("update_my_profile",{p_name:nm.value,p_contact:ct.value});if(s.error){say(friendly(s.error),true);return}
-   var q=await sb.rpc("request_seller");if(q.error){say(friendly(q.error),true);return}say("Application sent. A platform admin will review it.");await refreshAuth();setTab("member")}},"Apply to become a seller"));
+   var q=await sb.rpc("request_seller");if(q.error){say(friendly(q.error),true);return}await refreshAuth();if(roles().seller){setTab("products");say("Seller access is active. You can now list your first product.");toast("You are now a seller","Use + Add product to list your first item.")}else{setTab("member");say("Application sent. A platform admin will review it.")}}},st==="rejected"?"Apply again":"Activate seller access"));
  return h("div",{class:"mk-box"},h("h3",{style:"margin-top:0"},"Member center"),h("p",{class:"mk-sub"},S.user.email),
   h("div",{class:"mk-field"},h("label",null,"Display name"),nm,h("label",null,"Payment / contact instructions (required to sell)"),ct),
   h("div",{class:"mk-row",style:"margin:12px 0"},h("button",{class:"mk-btn o",onclick:async function(){var s=await sb.rpc("update_my_profile",{p_name:nm.value,p_contact:ct.value});if(s.error)say(friendly(s.error),true);else{say("Profile saved.");refreshAuth()}}},"Save profile")),
@@ -207,7 +206,7 @@ async function vMember(){if(!S.user)return prompt("Sign in to open your member c
 /* ---------- Seller: products, inventory, orders, dashboard ---------- */
 function denied(text,act){return h("div",{class:"mk-box mk-deny"},h("h3",{style:"margin-top:0"},"Access denied"),h("p",null,text),act)}
 function guardSeller(){if(!S.user)return denied("Seller pages are only available to signed-in, approved sellers. Please sign in.",h("button",{class:"mk-btn",onclick:function(){authDlg("in")}},"Sign in / Register"));
- if(!roles().seller)return denied(S.profile&&S.profile.seller_status==="pending"?"Your seller application is waiting for platform admin approval. You will get a notification when it is reviewed.":"Only approved sellers can manage products and orders. Apply in Member center first.",h("button",{class:"mk-btn",onclick:function(){setTab("member")}},"Go to Member center"));return null}
+ if(!roles().seller)return denied(S.profile&&S.profile.seller_status==="pending"?"Your seller application is waiting for platform admin approval. You will get a notification when it is reviewed.":"Only sellers can manage products and orders. Activate seller access in Member center first (it takes one click).",h("button",{class:"mk-btn",onclick:function(){setTab("member")}},"Go to Member center"));return null}
 function guardAdmin(){if(!S.user)return denied("Platform admin pages require you to sign in.",h("button",{class:"mk-btn",onclick:function(){authDlg("in")}},"Sign in"));return roles().admin?null:denied("Only platform administrators can open this page.",h("button",{class:"mk-btn",onclick:function(){setTab("browse")}},"Back to Browse"))}
 async function myProducts(){var r=await sb.from("products").select("*").eq("seller_id",S.user.id).neq("status","removed").order("created_at",{ascending:false});if(r.error)throw r.error;return r.data}
 function productDlg(p){closeDlg();var isNew=!p;p=p||{};
