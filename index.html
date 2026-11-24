@@ -246,7 +246,7 @@ document.addEventListener("click",function(e){if(!e.target.closest("#menu"))docu
 var links=[].slice.call(document.querySelectorAll("#menu>li>a"));
 /* ---- Page routing: home = hero + Announcements; every other menu item opens its own page ---- */
 var HOME="announcements";
-function route(){var h=decodeURIComponent((location.hash||"").slice(1)),el=h&&h!=="top"?document.getElementById(h):null,sec=el?(el.tagName==="SECTION"?el:el.closest("#secs>section")):null,id=sec?sec.id:HOME;
+function route(){var h=decodeURIComponent((location.hash||"").slice(1)).split("/")[0],el=h&&h!=="top"?document.getElementById(h):null,sec=el?(el.tagName==="SECTION"?el:el.closest("#secs>section")):null,id=sec?sec.id:HOME;
  document.querySelectorAll("#secs>section").forEach(function(x){x.hidden=x.id!==id});
  var hero=document.getElementById("top");if(hero)hero.hidden=id!==HOME;
  links.forEach(function(a){a.classList.toggle("on",a.getAttribute("href")==="#"+id)});
